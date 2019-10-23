@@ -1,6 +1,6 @@
 //just cp -r config-example config.js
 
-const env = process.env.NODE_ENV || 'dev'
+const env = process.env.NODE_ENV || 'dev';
 
 const config = () => {
     switch (env) {
@@ -25,6 +25,6 @@ const config = () => {
     }
 }
 
-console.log(`Starting API on ${env.toUpperCase()}`)
+console.log(`Starting API on ${env.toUpperCase()}`);
 
-module.exports = config()
+module.exports = config();
