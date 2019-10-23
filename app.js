@@ -28,9 +28,15 @@ app.use(bodyParser.json());
 
 const indexRoute = require('./Routes/index');
 const usersRoute = require('./Routes/users');
+const companiesRoute = require('./Routes/companies');
+const contractsRoute = require('./Routes/contracts');
+const paymentsRoute = require('./Routes/payments');
 
 app.use('/', indexRoute);
 app.use('/users', usersRoute);
+app.use('/companies', companiesRoute);
+app.use('/contracts', contractsRoute);
+app.use('/payments', paymentsRoute);
 
 app.listen(3000);
 

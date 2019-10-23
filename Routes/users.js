@@ -5,12 +5,10 @@ const UserController = require('../Controllers/UserController');
 
 app.use(auth);
 
-app.group("/users", (router) => {
-    router.get('/', UserController.index);
-    router.post('/create', UserController.create);
-    router.put('/update/:id', UserController.update);
-    router.delete('/delete/:id', UserController.delete);
-    router.post('/auth', UserController.auth);
-});
+app.get('/', UserController.index);
+app.post('/create', UserController.create);
+app.put('/update/:id', UserController.update);
+app.delete('/delete/:id', UserController.delete);
+app.post('/auth', UserController.auth);
 
 module.exports = app;
