@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const config = require('./config/settings');
-require('./seeds/seed');
+const config = require('./Config/settings');
+//require('./seeds/seed'); // Uncomment to seed
 
 const url = config.db;
 

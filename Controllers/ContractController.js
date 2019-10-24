@@ -3,7 +3,7 @@ const Contracts = require('../Model/contract');
 exports.index = async (req, res, next) => {
     try {
         const contracts = await Contracts.find({});
-        return res.send(contracts);
+        return res.status(200).send(contracts);
     } catch (error) {
         return res.status(500).send({ error: 'There was an error'});
     }
@@ -25,19 +25,19 @@ exports.create = async (req, res, next) => {
 }
 
 exports.update = async (req, res, next) => {
-    let id = req.params.id;
+    let _id = req.params.id;
 
-    Contracts.findOneAndUpdate({ id }, req.body, { upsert:true }, function(err, contract){
-        if (err) return res.send(500, { error: err });
-        return res.send({ contract });
+    Contracts.findOneAndUpdate({ _id }, req.body, { upsert:true }, function(err, contract){
+        if (err) return res.status(500).send({ error: err });
+        return res.status(200).send({ contract });
     });
 }
 
 exports.delete = async (req, res, next) => {
-    let id = req.params.id;
+    let _id = req.params.id;
 
-    Contracts.remove({ id }, function(err) {
-        if (err) return res.send(500, { error: err });
+    Contracts.remove({ _id }, function(err) {
+        if (err) return res.status(500).send({ error: err });
         return res.status(200).send('Deleted!');
     });
 }
