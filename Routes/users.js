@@ -9,6 +9,5 @@ app.get('/', UserController.index);
 app.post('/create', UserController.create);
 app.put('/update/:id', UserController.update);
 app.delete('/delete/:id', UserController.delete);
-app.post('/auth', UserController.auth);
 
 module.exports = app;

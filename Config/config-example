@@ -1,4 +1,4 @@
-//just cp -r config-example config.js
+//just cp -r config-example settings.js
 
 const env = process.env.NODE_ENV || 'dev';
 

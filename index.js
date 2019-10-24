@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const config = require('./Config/config');
+const config = require('./config/settings');
+require('./seeds/seed');
 
 const url = config.db;
 
@@ -13,15 +14,16 @@ mongoose.set('useCreateIndex', true);
 
 mongoose.connection.on('error', (err) => {
     console.log('Connection error with DB: '+err);
-})
+});
 
 mongoose.connection.on('disconnected', () => {
     console.log('DB Disconnected');
-})
+});
 
 mongoose.connection.on('connected', () => {
     console.log('Connected to DB');
-})
+});
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
