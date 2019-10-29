@@ -1,4 +1,5 @@
-//just cp -r config-example settings.js
+// just cp -r config-example settings.js
+// test user - normal:123qwe456asd
 
 const env = process.env.NODE_ENV || 'dev';
 
