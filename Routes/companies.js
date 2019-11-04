@@ -6,8 +6,8 @@ const CompanyController = require('../Controllers/CompanyController');
 app.use(auth);
 
 app.get('/', CompanyController.index);
-app.post('/create', CompanyController.create);
-app.put('/update/:id', CompanyController.update);
-app.delete('/delete/:id', CompanyController.delete);
+app.post('/', CompanyController.create);
+app.put('/:id', CompanyController.update);
+app.delete('/:id', CompanyController.delete);
 
 module.exports = app;

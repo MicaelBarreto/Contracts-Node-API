@@ -6,8 +6,8 @@ const UserController = require('../Controllers/UserController');
 app.use(auth);
 
 app.get('/', UserController.index);
-app.post('/create', UserController.create);
-app.put('/update/:id', UserController.update);
-app.delete('/delete/:id', UserController.delete);
+app.post('/', UserController.create);
+app.put('/:id', UserController.update);
+app.delete('/:id', UserController.delete);
 
 module.exports = app;

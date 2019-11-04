@@ -6,8 +6,8 @@ const PaymentController = require('../Controllers/PaymentController');
 app.use(auth);
 
 app.get('/', PaymentController.index);
-app.post('/create', PaymentController.create);
-app.put('/update/:id', PaymentController.update);
-app.delete('/delete/:id', PaymentController.delete);
+app.post('/', PaymentController.create);
+app.put('/:id', PaymentController.update);
+app.delete('/:id', PaymentController.delete);
 
 module.exports = app;
